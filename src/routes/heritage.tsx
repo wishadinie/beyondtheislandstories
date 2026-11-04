@@ -68,7 +68,7 @@ function Heritage() {
         <Container className="absolute inset-0 flex items-center text-ivory">
           <div className="grid w-full gap-10 md:grid-cols-3">
             {[["1982", "Sigiriya, Anuradhapura and Polonnaruwa inscribed by UNESCO."], ["477–495", "Reign of King Kashyapa I, builder of Sigiriya (CE)."], ["1153–1186", "Reign of Parakramabahu I at Polonnaruwa (CE)."]].map(([n, t]) => (
-              <Reveal key={n}><div className="[&_p]:text-ivory/85 [&_p:first-child]:text-gold"><Fact n={n}>{t}</Fact></div></Reveal>
+              <Reveal key={n}><div className="[&_p]:text-ivory/85 [&_p:first-child]:text-gold"><Fact n={n ?? ""}>{t}</Fact></div></Reveal>
             ))}
           </div>
         </Container>

@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowUpRight, Instagram, Play, Youtube } from "lucide-react";
 import { IMG } from "@/lib/images";
-import { getArticle } from "@/lib/articles";
+import { getArticle, type Article } from "@/lib/articles";
 import { SOCIAL } from "@/components/site/chrome";
 import { Container, Credit, DiscoverLink, MaskHeading, Parallax, Reveal, StoryCard } from "@/components/site/kit";
 
