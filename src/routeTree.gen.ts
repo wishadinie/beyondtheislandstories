@@ -10,33 +10,102 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ArtCraftRouteImport } from './routes/art-craft'
+import { Route as CommunityRouteImport } from './routes/community'
+import { Route as HeritageRouteImport } from './routes/heritage'
+import { Route as NatureWildlifeRouteImport } from './routes/nature-wildlife'
+import { Route as CategorySlugRouteImport } from './routes/$category.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ArtCraftRoute = ArtCraftRouteImport.update({
+  id: '/art-craft',
+  path: '/art-craft',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CommunityRoute = CommunityRouteImport.update({
+  id: '/community',
+  path: '/community',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HeritageRoute = HeritageRouteImport.update({
+  id: '/heritage',
+  path: '/heritage',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NatureWildlifeRoute = NatureWildlifeRouteImport.update({
+  id: '/nature-wildlife',
+  path: '/nature-wildlife',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CategorySlugRoute = CategorySlugRouteImport.update({
+  id: '/$category/$slug',
+  path: '/$category/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/art-craft': typeof ArtCraftRoute
+  '/community': typeof CommunityRoute
+  '/heritage': typeof HeritageRoute
+  '/nature-wildlife': typeof NatureWildlifeRoute
+  '/$category/$slug': typeof CategorySlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/art-craft': typeof ArtCraftRoute
+  '/community': typeof CommunityRoute
+  '/heritage': typeof HeritageRoute
+  '/nature-wildlife': typeof NatureWildlifeRoute
+  '/$category/$slug': typeof CategorySlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/art-craft': typeof ArtCraftRoute
+  '/community': typeof CommunityRoute
+  '/heritage': typeof HeritageRoute
+  '/nature-wildlife': typeof NatureWildlifeRoute
+  '/$category/$slug': typeof CategorySlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/art-craft'
+    | '/community'
+    | '/heritage'
+    | '/nature-wildlife'
+    | '/$category/$slug'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/art-craft'
+    | '/community'
+    | '/heritage'
+    | '/nature-wildlife'
+    | '/$category/$slug'
+  id:
+    | '__root__'
+    | '/'
+    | '/art-craft'
+    | '/community'
+    | '/heritage'
+    | '/nature-wildlife'
+    | '/$category/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ArtCraftRoute: typeof ArtCraftRoute
+  CommunityRoute: typeof CommunityRoute
+  HeritageRoute: typeof HeritageRoute
+  NatureWildlifeRoute: typeof NatureWildlifeRoute
+  CategorySlugRoute: typeof CategorySlugRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +117,51 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/art-craft': {
+      id: '/art-craft'
+      path: '/art-craft'
+      fullPath: '/art-craft'
+      preLoaderRoute: typeof ArtCraftRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/community': {
+      id: '/community'
+      path: '/community'
+      fullPath: '/community'
+      preLoaderRoute: typeof CommunityRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/heritage': {
+      id: '/heritage'
+      path: '/heritage'
+      fullPath: '/heritage'
+      preLoaderRoute: typeof HeritageRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/nature-wildlife': {
+      id: '/nature-wildlife'
+      path: '/nature-wildlife'
+      fullPath: '/nature-wildlife'
+      preLoaderRoute: typeof NatureWildlifeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/$category/$slug': {
+      id: '/$category/$slug'
+      path: '/$category/$slug'
+      fullPath: '/$category/$slug'
+      preLoaderRoute: typeof CategorySlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ArtCraftRoute: ArtCraftRoute,
+  CommunityRoute: CommunityRoute,
+  HeritageRoute: HeritageRoute,
+  NatureWildlifeRoute: NatureWildlifeRoute,
+  CategorySlugRoute: CategorySlugRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
