@@ -12,7 +12,7 @@ export const NAV = [
 ] as const;
 
 export const SOCIAL = {
-  instagram: "https://www.instagram.com/motion_the_journal/",
+  instagram: "https://www.instagram.com/discover_thambapanni/",
   youtube: "https://www.youtube.com/channel/UCdH4cUuuecP2b_auq9gdQWQ",
 };
 
