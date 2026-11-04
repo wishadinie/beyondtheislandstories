@@ -80,9 +80,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "LANKA. — Beyond the Island" },
+      { title: "THAMBAPANNI. — Beyond the Island" },
       { name: "description", content: "A journey through the soul of Sri Lanka." },
-      { property: "og:title", content: "LANKA. — Beyond the Island" },
+      { property: "og:title", content: "THAMBAPANNI. — Beyond the Island" },
       { property: "og:description", content: "A journey through the soul of Sri Lanka." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
