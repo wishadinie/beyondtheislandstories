@@ -36,7 +36,7 @@ const FEATURED = [
 ] as const;
 
 function Home() {
-  const stories = FEATURED.map(([c, s]) => getArticle(c, s)!);
+  const stories = FEATURED.map(([c, s]) => getArticle(c, s)!) as [Article, Article, Article, Article];
   return (
     <>
       {/* HERO */}
