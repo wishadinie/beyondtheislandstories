@@ -1,6 +1,7 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowLeft, ExternalLink } from "lucide-react";
 import { ARTICLES, CATEGORIES, getArticle } from "@/lib/articles";
+import { IMG } from "@/lib/images";
 import { Container, Credit, MaskHeading, PageHero, Parallax, Reveal, StoryCard } from "@/components/site/kit";
 
 export const Route = createFileRoute("/$category/$slug")({
@@ -78,9 +79,6 @@ function ArticlePage() {
             {s.image && i % 2 === 0 && (
               <Reveal className="md:col-span-7 md:col-start-6">
                 <figure>
-                  <div className="group overflow-hidden">
-                    <img src={`${""}${s.image ? "" : ""}`} hidden alt="" />
-                  </div>
                   <ImageBlock k={s.image} caption={s.caption ?? ""} />
                 </figure>
               </Reveal>
@@ -155,7 +153,6 @@ function ImageBlock({ k, caption }: { k: Parameters<typeof Credit>[0]["k"]; capt
   );
 }
 
-import { IMG } from "@/lib/images";
 function ImgZoom({ k, alt }: { k: keyof typeof IMG; alt: string }) {
   return <img src={IMG[k].src} alt={alt} loading="lazy" decoding="async" className="h-full w-full object-cover transition-transform duration-[1.6s] group-hover:scale-105" />;
 }
